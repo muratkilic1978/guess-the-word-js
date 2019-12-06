@@ -2,6 +2,8 @@ const message = document.querySelector(".message");
 const guess = document.querySelector("input");
 const button = document.querySelector("button");
 let inPlay = false;
+let scramble = "";
+let scrambled = "";
 const randomWords = ["javascript","website","html","css","course","programming","document"];
 
 
@@ -15,7 +17,9 @@ if(!inPlay){
     button.innerHTML = "Guess";
     //guess.style.display = "inline-block";
     guess.classList.toggle("hidden");
-    console.log(createWord());
+    scramble = createWord();
+    scrambled = randomArray(scramble.split("")).join("");
+    message.innerHTML = scrambled + " " + scramble;
     }
 });
 
@@ -23,8 +27,6 @@ function createWord(){
     let randomIndex = Math.floor(Math.random() * randomWords.length);
     console.log(randomIndex);
     let tempWord = randomWords[randomIndex];
-    let rand = randomArray(tempWord.split(""));
-    console.log(rand.join(""));
     return tempWord;
 }
 

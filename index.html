@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Guess the Word</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <div class="message"></div>
-   <input type="text" class="hidden">
-   <button type="button">Start</button>
+    <div class="container-fluid">
+        
+           <div class="message"></div>
+           <div class="input-field">
+               <input type="text" class="hidden">
+           </div>
+           <div class="submit">
+               <button type="button">Start</button>
+           </div>
+           <div class="points-container">
+               <p id="points">0</p>
+           </div>
+    
+    
+    </div>
    <script src="js/script.js"></script>
 </body>
 </html>

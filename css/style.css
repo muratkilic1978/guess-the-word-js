@@ -2,3 +2,55 @@
     display: none;
 }
 
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 30%;
+  
+}
+
+body {
+    margin-top: 16rem;
+}
+
+.message {
+    width: auto;
+    font-weight: 500;
+    color: cadetblue;
+    font-size: 1.2rem;
+}
+
+.input-field {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+input {
+    width: 16.8rem;
+    border: 1px solid black;
+}
+
+.submit {
+    max-width: 15rem;
+    background-color: lightgreen;
+}
+
+[type=button] {
+    text-decoration: none;
+    -webkit-appearance: button;
+    width: 0rem;
+    background-color: #4e799a;
+    padding: .55rem 8.45rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: orange;
+}
+
+#points {
+    padding: .55rem 8.45rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: darkorange;
+}

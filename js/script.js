@@ -1,25 +1,38 @@
 const message = document.querySelector(".message");
 const guess = document.querySelector("input");
 const button = document.querySelector("button");
+const displayPoints = document.getElementById("points");
 let inPlay = false;
 let scramble = "";
 let scrambled = "";
-const randomWords = ["javascript","website","html","css","course","programming","document"];
-
-
+let points = 0;
+const randomWords = ["javascript","website","html","css","course","programming","document", "template","backend","frontend","variable"];
 button.addEventListener("click", function(){
-   //console.log("Button was clicked");
-
-//console.log(inPlay);
 if(!inPlay){
     inPlay = true;
-    //console.log(inPlay);
     button.innerHTML = "Guess";
     //guess.style.display = "inline-block";
     guess.classList.toggle("hidden");
     scramble = createWord();
     scrambled = randomArray(scramble.split("")).join("");
-    message.innerHTML = scrambled + " " + scramble;
+    message.innerHTML = "Word: " + scrambled;
+    }else{
+        let tempGuess = guess.value;
+        points++;
+        console.log(tempGuess);
+        if(tempGuess.toLowerCase() == scramble){
+            console.log('Correct!!!');
+            inPlay = false;
+            message.innerHTML = "Correct answer - " + scramble;
+            displayPoints.innerHTML = points + " points"; 
+            button.innerHTML = "Start";
+            guess.classList.toggle("hidden");
+            guess.value = "";
+        }else{
+            console.log("guess again!");
+            message.innerHTML = "Try again - " + scrambled;
+            guess.value = "";
+        }
     }
 });
 
